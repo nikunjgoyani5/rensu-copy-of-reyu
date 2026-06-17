@@ -1,0 +1,300 @@
+:root {
+  --background: #030712;
+  --background: #FFFAF4;
+  --foreground: #f9fafb;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-inria: var(--font-inria-serif);
+  --font-inter: var(--font-inter);
+  --color-primary-hover: #4f46e5;
+  --color-secondary: #06b6d4;
+  --color-accent: #f43f5e;
+
+  --color-primary-100: #F5EDE3;
+  --color-primary-200: #EBDBC7;
+  --color-primary-300: #E2C9AB;
+  --color-primary-400: #D8B78F;
+  --color-primary-500: #CEA573;
+  --color-primary-600: #A5845C;
+  --color-primary-700: #7C6345;
+  --color-primary-800: #52422E;
+  --color-primary-900: #292117;
+
+  --color-base-100: #D4D4D3;
+  --color-base-200: #AAA8A7;
+  --color-base-300: #7F7D7A;
+  --color-base-400: #55514E;
+  --color-base-500: #2A2622;
+  --color-base-600: #221E1B;
+  --color-base-700: #191714;
+  --color-base-800: #110F0E;
+  --color-base-900: #080807;
+
+  --color-gray-100: #E8E8E8;
+  --color-gray-200: #D1D1D1;
+  --color-gray-300: #B9B9B9;
+  --color-gray-400: #A2A2A2;
+  --color-gray-500: #8B8B8B;
+  --color-gray-600: #6F6F6F;
+  --color-gray-700: #535353;
+  --color-gray-800: #383838;
+  --color-gray-900: #1C1C1C;
+  
+  --color-brand-dark: #08090d;
+  --color-brand-gold-hover: #c5a87a;
+  --color-brand-brown-dark: #4A3925;
+  --color-brand-brown-light: #654D32;
+  --color-brand-text-muted: #72543B;
+  --color-brand-text-dark: #4A403A;
+  --color-brand-footer-bg: #14110F;
+  --color-brand-footer-text: #C8A97E;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Inria Serif Utility Classes */
+.inria-serif-light {
+  font-family: var(--font-inria-serif);
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inria-serif-regular {
+  font-family: var(--font-inria-serif);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inria-serif-bold {
+  font-family: var(--font-inria-serif);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inria-serif-light-italic {
+  font-family: var(--font-inria-serif);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.inria-serif-regular-italic {
+  font-family: var(--font-inria-serif);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.inria-serif-bold-italic {
+  font-family: var(--font-inria-serif);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Inter Utility Class */
+.inter-font {
+  font-family: var(--font-inter);
+  font-style: normal;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Solitaire Design System Utilities */
+@utility solitaire-section {
+  @apply py-12 lg:py-16;
+}
+
+@utility solitaire-section-top {
+  @apply pt-12 lg:pt-16;
+}
+
+@utility solitaire-section-bottom {
+  @apply pb-12 lg:pb-16;
+}
+
+@utility solitaire-heading {
+  font-family: var(--font-inria-serif);
+  font-weight: 400;
+  @apply text-primary-800;
+}
+
+@utility solitaire-heading-bold {
+  font-family: var(--font-inria-serif);
+  font-weight: 700;
+  @apply text-primary-800;
+}
+
+@utility solitaire-title-main {
+  @apply text-3xl lg:text-4xl;
+  font-family: var(--font-inria-serif);
+  font-weight: 400;
+  @apply text-primary-800;
+}
+
+@utility solitaire-title-section {
+  @apply text-2xl lg:text-[40px];
+  font-family: var(--font-inria-serif);
+  font-weight: 700;
+  @apply text-primary-800;
+}
+
+@utility solitaire-title-sidebar {
+  @apply text-xl lg:text-2xl;
+  font-family: var(--font-inria-serif);
+  font-weight: 700;
+  @apply text-primary-600;
+}
+
+@utility solitaire-title-card {
+  @apply text-base lg:text-lg;
+  font-family: var(--font-inria-serif);
+  font-weight: 400;
+  @apply text-primary-800;
+}
+
+@utility solitaire-text-gold {
+  @apply text-primary-600;
+}
+
+@utility solitaire-text-gold-light {
+  @apply text-primary-500;
+}
+
+@utility solitaire-bg-beige {
+  @apply bg-primary-100;
+}
+
+@utility solitaire-bg-beige-dark {
+  @apply bg-primary-200;
+}
+
+@utility solitaire-border-beige {
+  @apply border-primary-200;
+}
+
+@utility solitaire-button {
+  @apply bg-primary-600 text-white font-inter font-normal hover:bg-primary-700 transition-colors;
+}
+
+@utility solitaire-card {
+  @apply bg-[#FFF8EF] border border-primary-200 p-2 rounded-2xl transition-all hover:shadow-md;
+}
+
+/* Solitaire Design System Utilities */
+
+@layer components {
+
+  /* 🔥 XL HEADING (56px) */
+  .heading-xl {
+    @apply font-inria font-bold;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  @media (min-width: 768px) {
+    .heading-xl {
+      font-size: 48px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-xl {
+      font-size: 56px;
+    }
+  }
+
+
+  /* 🔥 PRIMARY HEADING (48px) */
+  .heading-1 {
+    @apply font-inria font-bold;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  @media (min-width: 768px) {
+    .heading-1 {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-1 {
+      font-size: 48px;
+    }
+  }
+
+
+  /* 🔥 SECONDARY HEADING (40px) */
+  .heading-2 {
+    @apply font-inria font-bold;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  @media (min-width: 768px) {
+    .heading-2 {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-2 {
+      font-size: 40px;
+    }
+  }
+
+  /* 🔥 BUTTONS */
+  .btn-primary {
+    @apply flex items-center justify-center bg-primary-600 text-white font-inter font-medium transition-all hover:opacity-90 active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply flex items-center justify-center border-2 border-primary-600 text-primary-600 font-inter font-medium transition-all hover:bg-primary-600 hover:text-white active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-xl {
+    @apply text-xl lg:text-2xl px-6 py-2 lg:px-8 lg:py-3;
+  }
+
+}
